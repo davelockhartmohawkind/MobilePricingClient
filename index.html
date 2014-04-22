@@ -1,0 +1,305 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+
+        <title>com.Mohawkind.mobilepricing</title>
+  <!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="Content/css/skeleton_mod.css">
+    <link rel="stylesheet" href="Content/css/styles.css">
+        <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" >
+    </head>
+    <body  class="mpa_login">
+        
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+       <!-- <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>-->
+        <script type="text/javascript" charset="utf-8" src="jquery_1.5.2.min.js"></script>
+        <script type="text/javascript" src="PushNotification.js"></script>
+        
+        <script type="text/javascript">
+            var pushNotification;
+
+            function onDeviceReady() {
+                //alert("Hello");
+                //alert("ready");
+                //window.location.href = "#panelDealer";
+               // var ref = window.open(encodeURI('http://110.251.222.233:80/'), '_self', 'location=yes');
+
+                getConnectionSpeed();
+
+                $("#btn_OK").click(function () {
+                    $("#mask").show();
+                    $("#alertMessageBox").hide();
+                    getConnectionSpeed();
+                });
+
+
+             //   $("#btn_Start").click(function () {
+             //       $("#alertMessageBox").hide();
+             //   });
+
+
+
+                //    $("#alertMessageContent").html('There is a problem with the network connection. Press Ok to try again<');
+            //    $("#mask").show();
+            //    $("#alertMessageBox").show();
+            }
+
+               
+
+            // handle APNS notifications for iOS
+            function onNotificationAPN(e) {
+                if (e.alert) {
+                    $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
+                    navigator.notification.alert(e.alert);
+                }
+
+                if (e.sound) {
+                    var snd = new Media(e.sound);
+                    snd.play();
+                }
+
+                if (e.badge) {
+                    pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+                }
+            }
+
+            // handle GCM notifications for Android
+            function onNotificationGCM(e) {
+                $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+
+                switch (e.event) {
+                    case 'registered':
+                        if (e.regid.length > 0) {
+                            $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+                            // Your GCM push server needs to know the regID before it can push to this device
+                            // here is where you might want to send it the regID for later use.
+                            alert("regID = " + e.regID);
+                        }
+                        break;
+
+                    case 'message':
+                        // if this flag is set, this notification happened while we were in the foreground.
+                        // you might want to play a sound to get the user's attention, throw up a dialog, etc.
+                        if (e.foreground) {
+                            $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
+
+                            // if the notification contains a soundname, play it.
+                            var my_media = new Media("/android_asset/www/" + e.soundname);
+                            my_media.play();
+                        }
+                        else {	// otherwise we were launched because the user touched a notification in the notification tray.
+                            if (e.coldstart)
+                                $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+                            else
+                                $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+                        }
+
+                        $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+                        $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+                        break;
+
+                    case 'error':
+                        $("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+                        break;
+
+                    default:
+                        $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+                        break;
+                }
+            }
+
+            function tokenHandler(result) {
+                $("#app-status-ul").append('<li>token: ' + result + '</li>');
+                // Your iOS push server needs to know the token before it can push to this device
+                // here is where you might want to send it the token for later use.
+
+            }
+
+            function successHandler(result) {
+                $("#app-status-ul").append('<li>success:' + result + '</li>');
+            }
+
+            function errorHandler(error) {
+                $("#app-status-ul").append('<li>error:' + error + '</li>');
+            }
+
+            // Show a custom alert
+            //
+            function showAlert() {
+                navigator.notification.alert(
+                    'You are the winner!',  // message
+                    alertDismissed,
+                    'Game Over',            // title
+                    'Done'                  // buttonName
+                );
+                navigator.app.exitApp();
+            }
+
+            // alert dialog dismissed
+            function alertDismissed() {
+                // do something
+            }
+
+            // Beep three times
+            //
+            function playBeep() {
+                navigator.notification.beep(3);
+                navigator.app.exitApp();
+            }
+
+            // Vibrate for 2 seconds
+            //
+            function vibrate() {
+                navigator.notification.vibrate(2000);
+                navigator.app.exitApp();
+            }
+
+
+
+            // Called if something bad happens.
+            function onFail(message) {
+                alert('Failed because: ' + message);
+            }
+
+
+
+
+
+
+
+
+           // document.addEventListener('deviceready', onDeviceReady, true);
+           // document.addEventListener("volumeupbutton", playBeep, false);
+            //  document.addEventListener("volumedownbutton", playBeep, false);
+            //  onDeviceReady();
+
+            $(document).ready(function () {
+                // alert(typeof( doOnReady));
+                try {
+                    if (onDeviceReady) {
+                        onDeviceReady();
+                    }
+                } catch (err) {
+                    //do nothing here
+                    alert(err.message);
+                }
+
+            });
+
+
+            var getConnectionSpeed = function () {
+
+                var imageAddr = "http://www.leapcommunication.com/development/2921/assets/images/backgrounds/login_screen_bg.jpg" + "?n=" + Math.random();
+                var startTime, endTime;
+                var downloadSize = 29; //29 kb
+                var download = new Image();
+                download.onload = function () {
+                    endTime = (new Date()).getTime();
+                    showResults();
+                }
+                startTime = (new Date()).getTime();
+                download.src = imageAddr;
+
+                function showResults() {
+               
+                    var duration = (endTime - startTime) / 1000;
+                    var bitsLoaded = downloadSize * 8;
+                    var speedBps = (bitsLoaded / duration).toFixed(2);
+                    var speedKbps = (speedBps / 1024).toFixed(2);
+                    var speedMbps = (speedKbps / 1024).toFixed(2);
+                    /*alert("Your connection speed is: \n" +
+                           speedBps + " bps\n"   +
+                           speedKbps + " kbps\n" +
+                           speedMbps + " Mbps\n" );*/
+
+
+                    // Round to two digits
+                    cSpeed = Math.round(speedKbps * 10) / 10;
+
+                    //alert(cSpeed);
+                    //$('.indicator').css('opacity', 0);
+                    $('.indicator').css('width', '0%');
+                    $('.indicator').css('background-color', '#bed63a');
+
+                    $('.indicator').css('display', 'block');
+
+                    $('.indicator').delay(300).animate({ 'width': '90%' }, 600, function () {
+
+                        $('#cspeed').html(cSpeed + 'kbs');
+
+                    });
+
+                    if (cSpeed > 0) {
+                        var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=yes');
+                    }
+                    else {
+                        $("#alertMessageContent").html('There is a problem with the network connection. Press Ok to try again');
+                            $("#mask").show();
+                            $("#alertMessageBox").show();
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+         </script>
+
+        
+        <div class="logobox">
+            <img src="Content/images/logos/mpower_logo_start.png" class="logo_start" />
+            <h1>Mobile Pricing Application</h1>
+        </div>
+
+
+        <div class="companybox">
+            <img src="Content/images/logos/mohawk_company_logo.png" class="company_logo" />
+        </div>
+
+         <div class="cntrl_shim"></div>
+
+        <div class="controls">
+
+                <div class="control_widget">
+                    <h6>Connection</h6>
+                    <div class="indicator_frame">
+                        <div class="indicator" id="i_connection"><span id="cspeed"></span></div>
+                    </div>
+                </div>
+
+            </div>
+
+        <!-- <a href="#" id="btn_Start" class="btn_prime">Start</a>-->
+      
+
+        <!-- Alert Message -->
+       <div class="window  alertbox" id ="alertMessageBox">
+
+        <div class="modal_title">
+                <a class="close">Close</a>
+                <h1>Attention</h1>
+            </div>
+
+            <div class="modal_content">
+                <p id="alertMessageContent"  class="instructor">There is a problem with the network connection. Press Ok to try again</p>
+            </div>
+      
+
+        <div class="cntrl_shim"></div>
+
+                <a href="#" id="btn_OK" class="btn_prime">OK</a>
+       </div>
+       <div id="mask"  style="display:none"></div>
+		
+    </body>
+  
+</html>
