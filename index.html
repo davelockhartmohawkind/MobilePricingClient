@@ -36,7 +36,20 @@
 
             function onDeviceReady() {
                 alert("hello");
-                window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=yes');
+
+              
+                    if (typeof navigator !== "undefined" && navigator.app) {
+                        // Mobile device.
+                        navigator.app.loadUrl('http://mobilepricingdev.mohawkind.com/Home/Login', { openExternal: false });
+                    } else {
+                        // Possible web browser
+                        window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self','location=yes');
+                    }
+                
+
+
+
+               //var ref =  window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=yes');
                 //  getConnectionSpeed();
 
                   $("#btn_OK").click(function () {
