@@ -27,7 +27,10 @@
             var pushNotification;
 
             function connectToHost() {
-               var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_blank', 'location=no');
+                var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=no');
+                ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
+                ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
+                ref.addEventListener('exit', function () { alert(event.type); });
               // $(location).attr('href', 'http://mobilepricingdev.mohawkind.com/Home/Login');
             }
 
