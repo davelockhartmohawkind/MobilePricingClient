@@ -26,9 +26,13 @@
         <script type="text/javascript">
             var pushNotification;
 
-            function onDeviceReady() {
-                alert("hello");
+            function connectToHost() {
 
+            }
+
+            function onDeviceReady() {
+               
+                setTimeout("getConnectionSpeed()", 300);
                 //var ref = window.open('http://apache.org', '_blank', 'location=no');
                 //ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
                 //ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
@@ -43,17 +47,17 @@
                 //  getConnectionSpeed();
 
                  $("#btn_OK").click(function () {
-                     // $("#mask").show();
-                     // $("#alertMessageBox").hide();
-                     // getConnectionSpeed();
-                     var ref = window.open('http://apache.org', '_blank', 'location=no');
-                     ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
-                     ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
-                     ref.addEventListener('exit', function () { alert(event.type); });
+                      $("#mask").show();
+                      $("#alertMessageBox").hide();
+                      getConnectionSpeed();
+                     //var ref = window.open('http://apache.org', '_blank', 'location=no');
+                     //ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
+                     //ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
+                     //ref.addEventListener('exit', function () { alert(event.type); });
 
                  });
 
-                 $("#alertMessageBox").show();
+                // $("#alertMessageBox").show();
 
             }
 
