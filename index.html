@@ -41,11 +41,11 @@
                     if (typeof navigator !== "undefined" && navigator.app) {
                         // Mobile device.
                         alert("navigator.app.loadUrl");
-                        navigator.app.loadUrl('http://mobilepricingdev.mohawkind.com/Home/Login', { openExternal: false });
+                        navigator.app.loadUrl(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), { openExternal: false });
                     } else {
                         // Possible web browser
                         alert("window.open");
-                        window.open('http://www.google.com', '_self','location=yes');
+                        window.open(encodeURI('http://www.google.com'), '_self','location=yes');
                     }
                 
 
