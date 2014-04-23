@@ -24,6 +24,7 @@
       <plugin name="notification" value="org.apache.cordova.dialogs.Notification"/>
       <plugin name="app" value="org.apache.cordova.App"/>
       <plugin name="Capture" value="org.apache.cordova.Capture"/>
+      <plugin name="InAppBrowser" value="CDVInAppBrowser" />
    <!--   <plugin name="App" value="org.apache.cordova.App"/>
       <plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/>
       <plugin name="Device" value="org.apache.cordova.Device"/>
