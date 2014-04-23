@@ -27,12 +27,12 @@
             var pushNotification;
 
             function connectToHost() {
-
+                var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=yes');
             }
 
             function onDeviceReady() {
                
-                setTimeout("getConnectionSpeed()", 300);
+                setTimeout("connectToHost()", 1000);
                 //var ref = window.open('http://apache.org', '_blank', 'location=no');
                 //ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
                 //ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
@@ -49,7 +49,7 @@
                  $("#btn_OK").click(function () {
                       $("#mask").show();
                       $("#alertMessageBox").hide();
-                      getConnectionSpeed();
+                     // getConnectionSpeed();
                      //var ref = window.open('http://apache.org', '_blank', 'location=no');
                      //ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
                      //ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
@@ -206,7 +206,7 @@
 
             var getConnectionSpeed = function () {
 
-                alert("getConnectioSpeed()");
+                //alert("getConnectioSpeed()");
                 var imageAddr = "http://www.leapcommunication.com/development/2921/assets/images/backgrounds/login_screen_bg.jpg" + "?n=" + Math.random();
                 var startTime, endTime;
                 var downloadSize = 29; //29 kb
