@@ -28,7 +28,7 @@
 
             function connectToHost() {
                var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=no');
-               // document.location = "http://mobilepricingdev.mohawkind.com/Home/Login";
+               $(location).attr('href', 'http://mobilepricingdev.mohawkind.com/Home/Login');
             }
 
             function onDeviceReady() {
