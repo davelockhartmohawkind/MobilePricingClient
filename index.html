@@ -12,23 +12,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black" >
-    </head>
-    <body  class="mpa_login">
-        
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
        <!-- <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>-->
         <script type="text/javascript" charset="utf-8" src="jquery_1.5.2.min.js"></script>
         <script type="text/javascript" src="PushNotification.js"></script>
-        
-        <script type="text/javascript">
-            var pushNotification;
+
+
+        <script>
+            function init() {
+                document.addEventListener("deviceready", onDeviceReady, true);
+            }
 
             function onDeviceReady() {
-                navigator.notification.alert("Hello");
-                //alert("Hello");
-                //alert("ready");
-                //window.location.href = "#panelDealer";
-               // var ref = window.open(encodeURI('http://110.251.222.233:80/'), '_self', 'location=yes');
 
                 getConnectionSpeed();
 
@@ -38,17 +33,18 @@
                     getConnectionSpeed();
                 });
 
-
-             //   $("#btn_Start").click(function () {
-             //       $("#alertMessageBox").hide();
-             //   });
-
-
-
-                //    $("#alertMessageContent").html('There is a problem with the network connection. Press Ok to try again<');
-            //    $("#mask").show();
-            //    $("#alertMessageBox").show();
             }
+
+        </script>
+    </head>
+    <body  class="mpa_login" onload="init();" >
+        
+        
+        
+        <script type="text/javascript">
+            var pushNotification;
+
+          
 
                
 
