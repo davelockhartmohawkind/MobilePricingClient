@@ -40,16 +40,12 @@
             function onDeviceReady() {
                 alert("hello");
 
+                var ref = window.open('http://apache.org', '_blank', 'location=yes');
+                ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
+                ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
+                ref.addEventListener('exit', function () { alert(event.type); });
+
               
-                    if (typeof navigator !== "undefined" && navigator.app) {
-                        // Mobile device.
-                        alert("navigator.app.loadUrl");
-                        navigator.app.loadUrl(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), { openExternal: false });
-                    } else {
-                        // Possible web browser
-                        alert("window.open");
-                        window.open(encodeURI('http://www.google.com'), '_self','location=yes');
-                    }
                 
 
 
@@ -57,11 +53,11 @@
                //var ref =  window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=yes');
                 //  getConnectionSpeed();
 
-                  $("#btn_OK").click(function () {
-                      $("#mask").show();
-                      $("#alertMessageBox").hide();
-                      getConnectionSpeed();
-                  });
+               //   $("#btn_OK").click(function () {
+               //       $("#mask").show();
+               //       $("#alertMessageBox").hide();
+               //       getConnectionSpeed();
+               //   });
 
             }
 
