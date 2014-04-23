@@ -20,31 +20,32 @@
 
         <script>
             function init() {
-                document.addEventListener("deviceready", onDeviceReady, true);
+               // document.addEventListener("deviceready", onDeviceReady, true);
             }
 
-            function onDeviceReady() {
-
-                getConnectionSpeed();
-
-                $("#btn_OK").click(function () {
-                    $("#mask").show();
-                    $("#alertMessageBox").hide();
-                    getConnectionSpeed();
-                });
-
-            }
+            
 
         </script>
     </head>
-    <body  class="mpa_login" onload="init();" >
+    <body  class="mpa_login"  >
         
         
         
         <script type="text/javascript">
             var pushNotification;
 
-          
+            function onDeviceReady() {
+                alert("hello");
+
+                //  getConnectionSpeed();
+
+                //  $("#btn_OK").click(function () {
+                //      $("#mask").show();
+                //      $("#alertMessageBox").hide();
+                //      getConnectionSpeed();
+                //  });
+
+            }
 
                
 
@@ -296,7 +297,9 @@
                 <a href="#" id="btn_OK" class="btn_prime">OK</a>
        </div>
        <div id="mask"  style="display:none"></div>
-		
+		<script  type="text/javascript" >
+		    document.addEventListener('deviceready', onDeviceReady, true);
+		</script>
     </body>
   
 </html>
