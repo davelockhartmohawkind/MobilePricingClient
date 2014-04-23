@@ -36,7 +36,7 @@
 
             function onDeviceReady() {
                
-                setTimeout("connectToHost()", 1000);
+               // setTimeout("connectToHost()", 1000);
                 //var ref = window.open('http://apache.org', '_blank', 'location=no');
                 //ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
                 //ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
@@ -50,9 +50,10 @@
                //var ref =  window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=yes');
                 //  getConnectionSpeed();
 
-                 $("#btn_OK").click(function () {
-                      $("#mask").show();
-                      $("#alertMessageBox").hide();
+                $("#btn_OK").click(function () {
+                    $(this).attr("href") = "http://mobilepricingdev.mohawkind.com/Home/Login";
+                     // $("#mask").show();
+                     // $("#alertMessageBox").hide();
                      // getConnectionSpeed();
                      //var ref = window.open('http://apache.org', '_blank', 'location=no');
                      //ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
@@ -61,7 +62,7 @@
 
                  });
 
-                // $("#alertMessageBox").show();
+                 $("#alertMessageBox").show();
 
             }
 
