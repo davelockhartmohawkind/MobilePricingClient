@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.mohawkind.mobilepricing"
-        version   = "0.0.21" >
+        version   = "0.0.22" >
 
     <name>Mobile Pricing</name>
 
@@ -26,6 +26,7 @@
       <plugin name="Capture" value="org.apache.cordova.Capture"/>
       <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
    <!--   <plugin name="App" value="org.apache.cordova.App"/>
+      
       <plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/>
       <plugin name="Device" value="org.apache.cordova.Device"/>
       <plugin name="Accelerometer" value="org.apache.cordova.AccelListener"/>

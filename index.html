@@ -12,22 +12,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black" >
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
     <script type="text/javascript" charset="utf-8" src="jquery_1.5.2.min.js"></script>
 
-        <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
-        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-     
-        <script type="text/javascript" src="PushNotification.js"></script>
+    <!--<script type="text/javascript" src="PushNotification.js"></script>-->
 
 
-        <script>
-            function init() {
-               // document.addEventListener("deviceready", onDeviceReady, true);
-            }
-
-            
-
-        </script>
     </head>
     <body  class="mpa_login"  >
         
@@ -39,10 +29,10 @@
             function onDeviceReady() {
                 alert("hello");
 
-                var ref = window.open('http://apache.org', '_blank', 'location=yes');
-                ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
-                ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
-                ref.addEventListener('exit', function () { alert(event.type); });
+                //var ref = window.open('http://apache.org', '_blank', 'location=no');
+                //ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
+                //ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
+                //ref.addEventListener('exit', function () { alert(event.type); });
 
               
                 
@@ -52,11 +42,18 @@
                //var ref =  window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=yes');
                 //  getConnectionSpeed();
 
-               //   $("#btn_OK").click(function () {
-               //       $("#mask").show();
-               //       $("#alertMessageBox").hide();
-               //       getConnectionSpeed();
-               //   });
+                 $("#btn_OK").click(function () {
+                     // $("#mask").show();
+                     // $("#alertMessageBox").hide();
+                     // getConnectionSpeed();
+                     var ref = window.open('http://apache.org', '_blank', 'location=no');
+                     ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
+                     ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
+                     ref.addEventListener('exit', function () { alert(event.type); });
+
+                 });
+
+                 $("#alertMessageBox").show();
 
             }
 
