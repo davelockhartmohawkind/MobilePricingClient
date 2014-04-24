@@ -31,24 +31,13 @@
                 ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
                 ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
                 ref.addEventListener('exit', function () { alert(event.type); });
-              // $(location).attr('href', 'http://mobilepricingdev.mohawkind.com/Home/Login');
+            
             }
 
             function onDeviceReady() {
                
-               // setTimeout("connectToHost()", 1000);
-                //var ref = window.open('http://apache.org', '_blank', 'location=no');
-                //ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
-                //ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
-                //ref.addEventListener('exit', function () { alert(event.type); });
-
-              
-                
-
-
-
-               //var ref =  window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=yes');
-                //  getConnectionSpeed();
+                setTimeout("connectToHost()", 1000);
+               
 
                // $("#btn_OK").click(function () {
                //     $(this).attr("href") = "http://mobilepricingdev.mohawkind.com/Home/Login";
@@ -62,7 +51,7 @@
 
                //  });
 
-                 $("#alertMessageBox").show();
+               //  $("#alertMessageBox").show();
 
             }
 
@@ -314,7 +303,7 @@
 
         <div class="cntrl_shim"></div>
 
-                <a href="http://mobilepricingdev.mohawkind.com/Home/Login" id="btn_OK_" class="btn_prime">OK</a>
+                <a href="#" id="btn_OK" class="btn_prime">OK</a>
        </div>
        <div id="mask"  style="display:none"></div>
 		<script  type="text/javascript" >
