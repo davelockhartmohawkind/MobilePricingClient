@@ -27,11 +27,12 @@
             var pushNotification;
 
             function connectToHost() {
-                var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=no');
+             //   var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=no');
                // var ref = window.open(encodeURI('http://172.16.68.157/Home/Login'), '_self', 'location=no');
               //  ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
               //  ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
-              //  ref.addEventListener('exit', function () { alert(event.type); });
+                //  ref.addEventListener('exit', function () { alert(event.type); });
+              $("#theForm").submit();
             
             }
 
@@ -273,10 +274,14 @@
             <img src="Content/images/logos/mohawk_company_logo.png" class="company_logo" />
         </div>
 
-         <div class="cntrl_shim"></div>
+         <div class="cntrl_shim">
 
+    
+         </div>
+        
+      
         <div class="controls">
-
+             
                <!-- <div class="control_widget">
                     <h6>Connection</h6>
                     <div class="indicator_frame">
@@ -300,11 +305,29 @@
             <div class="modal_content">
                 <p id="alertMessageContent"  class="instructor">There is a problem with the network connection. Press Ok to try again</p>
             </div>
-      
+ 
+            <div class="loginform">
+                <form id="theForm" action="http://mobilepricingdev.mohawkind.com/Home/Login" method="get" >
+
+                   
+
+                   
+                    <div class="login_btn">
+                        <a href="javascript:void(0);" class="btn_log" name="sign_in" id="sign_in">Login</a>
+                    </div>
+
+                    <input type="checkbox" id="remember_me" name="remember_login" />
+                    <label for="remember_me"><span></span> Remember Me.</label>
+
+                    
+
+                </form>
+
+            </div>
 
         <div class="cntrl_shim"></div>
 
-                <a href="#" id="btn_OK" class="btn_prime">OK</a>
+                <a href="#" id="btn_OK" class="btn_prime ">OK</a>
        </div>
        <div id="mask"  style="display:none"></div>
 		<script  type="text/javascript" >
