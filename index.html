@@ -32,8 +32,9 @@
               //  ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
               //  ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
                 //  ref.addEventListener('exit', function () { alert(event.type); });
-              $("#theForm").submit();
-            
+                //  $("#theForm").submit();
+              //  window.location.href = "http://mobilepricingdev.mohawkind.com/Home/Login";
+                navigator.app.loadUrl('http://mobilepricingdev.mohawkind.com/Home/Login'); //working 
             }
 
             function onDeviceReady() {
