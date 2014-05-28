@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.mohawkind.mobilepricing"
-        version   = "0.0.51" >
+        version   = "0.0.52" >
 
     <name>Mobile Pricing</name>
 
@@ -117,10 +117,10 @@
     <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
     <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
     <gap:splash src="res/screen/blackberry/screen-225.png"         gap:platform="blackberry" />
-    <gap:splash src="Content/images/icons/Mobile-Pricing-114x114.png"    gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="Content/images/icons/Mobile-Pricing-114x114.png" gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="Content/images/icons/Mobile-Pricing-114x114.png"      gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="Content/images/icons/Mobile-Pricing-114x114.png"     gap:platform="ios"     width="1024" height="768" />
+    <gap:splash src="Content/images/icons/startup-image-320x320.png"    gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="Content/images/icons/startup-image-320x320.png" gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="Content/images/icons/startup-image-320x320.png"      gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="Content/images/icons/startup-image-320x320.png"     gap:platform="ios"     width="1024" height="768" />
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
 
     <!--
