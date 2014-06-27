@@ -9,14 +9,30 @@
     <link rel="stylesheet" href="Content/css/styles.css">
         <!-- Mobile Specific Metas
   ================================================== -->
+
+         <!-- Favicon
+	================================================== -->
+	<link rel="shortcut icon" href="Content/images/icons/favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="Content/images/icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="Content/images/icons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="Content/images/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" href="Content/images/icons/apple-touch-icon-114x114.png"/>
+
+    <link rel="apple-touch-startup-image" href="assets/images/icons/startup.png" />
+    <link rel="image_src" href="assets/images/icons/display-thumb.jpg" />
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" >
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" 
+
+          <!-- Javacript
+	================================================== -->
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
     <script type="text/javascript" charset="utf-8" src="jquery_1.5.2.min.js"></script>
-<script type="text/javascript">
-    app.initialize();
-  </script>
+    <script type="text/javascript" charset="utf-8" src="startup.js"></script>
+    <script type="text/javascript">
+      app.initialize();
+    </script>
     <!--<script type="text/javascript" src="PushNotification.js"></script>-->
 
 
@@ -27,45 +43,6 @@
         
         <script type="text/javascript">
             var pushNotification;
-
-            function connectToHost() {
-                try {
-                      var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self',  'toolbar=no,location=no');
-                      //var ref = window.open('priceList.html');
-                    //window.open("http://mobilepricingdev.mohawkind.com/Home/Login", "_self", "location=no; toolbar=no");
-                    // window.location.href = "http://mobilepricingdev.mohawkind.com/Home/Login";
-                   // navigator.app.loadUrl('http://mobilepricingdev.mohawkind.com/Home/Login'); //working 
-                  //  navigator.app.loadUrl('http://www.google.com', { openExternal: true });
-                }
-                catch (err) {
-                    alert(err.message);
-                }
-            }
-
-            function onDeviceReady() {
-               
-                setTimeout("connectToHost()", 1000);
-               
-
-                $("#A1").click(function () {
-                    //alert("going to another page");
-                   // window.location.href = "http://mobilepricingdev.mohawkind.com/Home/Login";
-                   //$(this).attr("href") = "http://mobilepricingdev.mohawkind.com/Home/Login";
-                     // $("#mask").show();
-                     // $("#alertMessageBox").hide();
-                     // getConnectionSpeed();
-                     //var ref = window.open('http://apache.org', '_blank', 'location=no');
-                     //ref.addEventListener('loadstart', function () { alert('start: ' + event.url); });
-                     //ref.addEventListener('loadstop', function () { alert('stop: ' + event.url); });
-                     //ref.addEventListener('exit', function () { alert(event.type); });
-
-                 });
-
-               //  $("#alertMessageBox").show();
-
-            }
-
-               
 
             // handle APNS notifications for iOS
             function onNotificationAPN(e) {
@@ -189,92 +166,33 @@
 
 
 
-           // document.addEventListener('deviceready', onDeviceReady, true);
-           // document.addEventListener("volumeupbutton", playBeep, false);
-            //  document.addEventListener("volumedownbutton", playBeep, false);
-            //  onDeviceReady();
-
-            $(document).ready(function () {
-                // alert(typeof( doOnReady));
-                try {
-                    if (onDeviceReady) {
-                        onDeviceReady();
-                    }
-                } catch (err) {
-                    //do nothing here
-                    alert(err.message);
-                }
-
-            });
-
-
-            var getConnectionSpeed = function () {
-
-                //alert("getConnectioSpeed()");
-                var imageAddr = "http://www.leapcommunication.com/development/2921/assets/images/backgrounds/login_screen_bg.jpg" + "?n=" + Math.random();
-                var startTime, endTime;
-                var downloadSize = 29; //29 kb
-                var download = new Image();
-                download.onload = function () {
-                    endTime = (new Date()).getTime();
-                    showResults();
-                }
-                startTime = (new Date()).getTime();
-                download.src = imageAddr;
-
-                function showResults() {
-               
-                    var duration = (endTime - startTime) / 1000;
-                    var bitsLoaded = downloadSize * 8;
-                    var speedBps = (bitsLoaded / duration).toFixed(2);
-                    var speedKbps = (speedBps / 1024).toFixed(2);
-                    var speedMbps = (speedKbps / 1024).toFixed(2);
-                    /*alert("Your connection speed is: \n" +
-                           speedBps + " bps\n"   +
-                           speedKbps + " kbps\n" +
-                           speedMbps + " Mbps\n" );*/
-
-
-                    // Round to two digits
-                    cSpeed = Math.round(speedKbps * 10) / 10;
-
-                    //alert(cSpeed);
-                    //$('.indicator').css('opacity', 0);
-                    $('.indicator').css('width', '0%');
-                    $('.indicator').css('background-color', '#bed63a');
-
-                    $('.indicator').css('display', 'block');
-
-                    $('.indicator').delay(300).animate({ 'width': '90%' }, 600, function () {
-
-                        $('#cspeed').html(cSpeed + 'kbs');
-
-                    });
-
-                    if (cSpeed > 0) {
-                        var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'location=yes');
-                    }
-                    else {
-                        $("#alertMessageContent").html('There is a problem with the network connection. Press Ok to try again');
-                            $("#mask").show();
-                            $("#alertMessageBox").show();
-                    }
 
 
 
-                }
-
-
-
-
-            }
+           
 
          </script>
 
         
+        <body class="mpa_login">
+
         <div class="logobox">
             <img src="Content/images/logos/mpower_logo_start.png" class="logo_start" />
             <h1>Mobile Pricing Application</h1>
+
+            <div id="startloadbox">
+                <h5 id="loadmsg">Testing Connection <span id="cspeed"></span></h5>
+                <div class="indicator_frame_start">
+                    <div class="indicator" id="i_connection"></div>
+                </div>
+
+                <div class="retry_btn">
+                    <a href="javascript:getConnectionSpeed();" class="btn_prime" name="testSignal" id="test_signal">Try Again</a>
+                </div>
+
+            </div>
+
+
         </div>
 
 
@@ -282,65 +200,9 @@
             <img src="Content/images/logos/mohawk_company_logo.png" class="company_logo" />
         </div>
 
-         <div class="cntrl_shim">
 
-    
-         </div>
-        
-      
-        <div class="controls">
-          <!--    <a  id="A1" class="btn_prime ">OK</a>-->
-               <!-- <div class="control_widget">
-                    <h6>Connection</h6>
-                    <div class="indicator_frame">
-                        <div class="indicator" id="i_connection"><span id="cspeed"></span></div>
-                    </div>
-                </div> -->
 
-            </div>
 
-        <!-- <a href="#" id="btn_Start" class="btn_prime">Start</a>-->
-      
-
-        <!-- Alert Message -->
-       <div class="window  alertbox" id ="alertMessageBox">
-
-        <div class="modal_title">
-                <a class="close">Close</a>
-                <h1>Attention</h1>
-            </div>
-
-            <div class="modal_content">
-                <p id="alertMessageContent"  class="instructor">There is a problem with the network connection. Press Ok to try again</p>
-            </div>
- 
-            <div class="loginform">
-                <form id="theForm" action="http://mobilepricingdev.mohawkind.com/Home/Login" method="get" >
-
-                   
-
-                   
-                    <div class="login_btn">
-                        <a href="javascript:void(0);" class="btn_log" name="sign_in" id="sign_in">Login</a>
-                    </div>
-
-                    <input type="checkbox" id="remember_me" name="remember_login" />
-                    <label for="remember_me"><span></span> Remember Me.</label>
-
-                    
-
-                </form>
-
-            </div>
-
-        <div class="cntrl_shim"></div>
-
-                <a href="http://mobilepricingdev.mohawkind.com/Home/Login" id="btn_OK" class="btn_prime ">OK</a>
-       </div>
-       <div id="mask"  style="display:none"></div>
-		<script  type="text/javascript" >
-		   // document.addEventListener('deviceready', onDeviceReady, true);
-		</script>
-    </body>
+</body>
   
 </html>
