@@ -29,11 +29,21 @@ $(document).ready(function () {
 var getConnectionSpeed = function () {
     //Reset test elements
     try {
-        alert("getConnetionSpeed()");
+        //alert("getConnetionSpeed()");
         $('#test_signal').css('display', 'none');
         $('#loadmsg').html('Testing Connection <span id="cspeed"></span>');
 
+        setTimeout(function () {
+            try {
+                var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'toolbar=no,location=no');
 
+            }
+            catch (err) {
+                alert(err.message);
+            }
+        }, 600);
+
+        return;
         var minSpeed = 30; // Set minimum connection speed (percentage that is acceptable)
         var cper = 0;
         var cTxt = 'Untested';
@@ -63,7 +73,7 @@ var getConnectionSpeed = function () {
 
 
         function showResults() {
-            alert("showResults()");
+            //alert("showResults()");
             var duration = (endTime - startTime) / 1000;
             var bitsLoaded = downloadSize * 8;
             var speedBps = (bitsLoaded / duration).toFixed(2);
