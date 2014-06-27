@@ -28,6 +28,7 @@ $(document).ready(function () {
 // Functions
 var getConnectionSpeed = function () {
     //Reset test elements
+    alert("starting getConnection()");
     $('#test_signal').css('display', 'none');
     $('#loadmsg').html('Testing Connection <span id="cspeed"></span>');
 
