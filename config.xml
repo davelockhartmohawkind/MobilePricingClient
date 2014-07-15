@@ -3,10 +3,10 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.mohawkind.mobilepricing"
-        version   = "0.0.65" >
+        id        = "com.mohawkind.mobilepricingDev"
+        version   = "0.0.67" >
 
-    <name>Mobile Pricing</name>
+    <name>M P Dev</name>
 
     <description>
         Mobile Pricing Client.
