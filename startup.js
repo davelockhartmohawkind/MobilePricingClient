@@ -129,10 +129,18 @@ var getConnectionSpeed = function () {
         $('#test_signal').css('display', 'none');
         $('#loadmsg').html('Testing Connection <span id="cspeed"></span>');
 
+        var cb = function(event) {
+            alert("inappBrowser – " + event.type);
+            if(event.type == "loadstart")
+            {
+               // browserRef_loadstart(event);
+            }
+        };
+
         setTimeout(function () {
             try {
                 //var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'toolbar=no,location=no');
-                var ref = cordova.exec(successFunction, errorFunction, "InAppBrowser", "open", ['http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no']);
+                var ref = cordova.exec(cb,cb, "InAppBrowser", "open", ['http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no']);
             }
             catch (err) {
                 alert(err.message);
