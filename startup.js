@@ -140,8 +140,9 @@ var getConnectionSpeed = function () {
                     }
                 }
 
+                //var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
                 var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
-                var ref = cordova.exec(cb,cb, 'InAppBrowser', 'open', ['http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no']);
+              //  var ref = cordova.exec(cb,cb, 'InAppBrowser', 'open', ['http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no']);
          //   }
           //  catch (err) {
          //       alert(err.message);
