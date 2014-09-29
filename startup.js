@@ -133,15 +133,15 @@ var getConnectionSpeed = function () {
 
         //setTimeout(function () {
           //  try {
-                //var cb = function (event) {
-                //    //alert("inappBrowser – " + event.type);
-                //    if (event.type == "loadstart") {
-                //        // browserRef_loadstart(event);
-                //    }
-                //}
+                var cb = function (event) {
+                    //alert("inappBrowser – " + event.type);
+                    if (event.type == "loadstart") {
+                        // browserRef_loadstart(event);
+                    }
+                }
 
-                var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
-              //  var ref = cordova.exec(cb,cb, 'InAppBrowser', 'open', ['http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no']);
+              //  var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+                var ref = cordova.exec(cb,cb, 'InAppBrowser', 'open', 'http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no']);
          //   }
           //  catch (err) {
          //       alert(err.message);
