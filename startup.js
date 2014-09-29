@@ -131,7 +131,7 @@ var getConnectionSpeed = function () {
 
        
 
-        setTimeout(function () {
+        //setTimeout(function () {
             try {
                 var cb = function (event) {
                     alert("inappBrowser – " + event.type);
@@ -146,7 +146,7 @@ var getConnectionSpeed = function () {
             catch (err) {
                 alert(err.message);
             }
-        }, 100);
+       // }, 100);
 
        // return;
       //  alert("start download");
