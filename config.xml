@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.mohawkind.mobilepricingDev"
-        version   = "0.0.10" >
+        version   = "0.0.11" >
 
     <name>M P Dev</name>
 
@@ -24,6 +24,7 @@
       <plugin name="notification" value="org.apache.cordova.dialogs.Notification"/>
       <plugin name="app" value="org.apache.cordova.App"/>
       <plugin name="Capture" value="org.apache.cordova.Capture"/>
+      <plugin name="splash" value="org.apache.cordova.splashscreen" />
     <!--  <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />-->
    <!--   <plugin name="App" value="org.apache.cordova.App"/>
       
@@ -88,11 +89,16 @@
     <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
     <preference name="HideKeyboardFormAccessoryBar" value="true"/>
+    <!-- Do not auto hide splash on iOS -->
+    <preference name="AutoHideSplashScreen" value="false" />
+    <!-- Do not auto hide splash on Android -->
+    <preference name="SplashScreenDelay" value="10000"/>
     <!-- Plugins can also be added here. -->
     <!--
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
+ 
   <gap:plugin name="com.phonegap.plugins.pushplugin" />
 
     <!-- Define app icon for each platform. -->

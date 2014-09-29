@@ -117,6 +117,11 @@ var showResults = function () {
 }
 
 
+var handleImageDownload = function () {
+    alert("downloaded");
+}
+
+
 var getConnectionSpeed = function () {
     //Reset test elements
     try {
@@ -124,38 +129,47 @@ var getConnectionSpeed = function () {
         $('#test_signal').css('display', 'none');
         $('#loadmsg').html('Testing Connection <span id="cspeed"></span>');
 
-        //setTimeout(function () {
-        //    try {
-        //        var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'toolbar=no,location=no');
+        setTimeout(function () {
+            try {
+                var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'toolbar=no,location=no');
 
-        //    }
-        //    catch (err) {
-        //        alert(err.message);
-        //    }
-        //}, 600);
+            }
+            catch (err) {
+                alert(err.message);
+            }
+        }, 600);
 
        // return;
-      
-        var imageAddr = "http://mobilepricingdev.mohawkind.com/Content/images/backgrounds/login_screen_bg.jpg" + "?n=" + Math.random();
+      //  alert("start download");
+       // var imageAddr = "http://mobilepricingdev.mohawkind.com/Content/images/backgrounds/login_screen_bg.jpg" + "?n=" + Math.random();
         
      
-        var download = new Image();
-        download.onload = function () {
-            endTime = (new Date()).getTime();
-            showResults();
-        }
+        //var download = new Image();
+        //download.onload = function () {
+        //    endTime = (new Date()).getTime();
+        //    showResults();
+        //}
 
-        // Test Network Connection
-        var online = navigator.onLine;
+        //$.post(
+        // 'http://mobilepricingdev.mohawkind.com/Home/Image',
+        // { imageName: "bla" },
+        // handleImageDownload
+        //         );
+
+        
+
+
+        //// Test Network Connection
+        //var online = navigator.onLine;
         //alert(online);
-        if (online == false) {
-            $('#loadmsg').html('No network connection detected.');
-            $('#test_signal').delay(600).fadeIn(600);
-        }
-        else {
-            startTime = (new Date()).getTime();
-            download.src = imageAddr;
-        }
+        //if (online == false) {
+        //    $('#loadmsg').html('No network connection detected.');
+        //    $('#test_signal').delay(600).fadeIn(600);
+        //}
+        //else {
+        //    startTime = (new Date()).getTime();
+        //    download.src = imageAddr;
+        //}
 
 
 
