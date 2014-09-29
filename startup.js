@@ -131,13 +131,13 @@ var getConnectionSpeed = function () {
 
         setTimeout(function () {
             try {
-                var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'toolbar=no,location=no');
-
+                //var ref = window.open(encodeURI('http://mobilepricingdev.mohawkind.com/Home/Login'), '_self', 'toolbar=no,location=no');
+                var ref = cordova.exec(successFunction, errorFunction, "InAppBrowser", "open", ['http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no']);
             }
             catch (err) {
                 alert(err.message);
             }
-        }, 600);
+        }, 100);
 
        // return;
       //  alert("start download");
