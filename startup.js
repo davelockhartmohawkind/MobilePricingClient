@@ -32,7 +32,8 @@ $(document).ready(function () {
 
 // Functions
 
-function checkConnection() {
+var checkConnection = function () {
+    alert('checking connection');
     var networkState = navigator.network.connection.type;
 
     var states = {};
