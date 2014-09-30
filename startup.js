@@ -9,7 +9,9 @@ var cTxt = 'Untested';
 
 $(document).ready(function () {
 
-    checkConnection();
+    //checkConnection();
+    var test = window.navigator.onLine;
+    alert(test);
     getConnectionSpeed();
 
 
