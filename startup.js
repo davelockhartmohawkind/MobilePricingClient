@@ -35,7 +35,7 @@ $(document).ready(function () {
 var checkConnection = function () {
     try{
         alert('checking connection');
-        var networkState = navigator.network.connection.type;
+        var networkState = NetworkStatus.network.connection.type;
 
         var states = {};
         states[Connection.UNKNOWN] = 'Unknown connection';
