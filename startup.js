@@ -13,38 +13,59 @@ var oldstate = false;
 
 $(document).ready(function () {
 
-    //checkConnection();
-   // var test = window.navigator.onLine;
-    //if (test == true) {
-    //oldstate = navigator.online;
-    //navigator.onlinechange = function (evnt, newState) {
-    //    alert('your changed from' + oldState + ' to' + newState + 'state');
-    //}
-
-  
 
     $('#loadmsg').html('Testing Connection');
-   
+    $('.indicator').css('display', 'block');
+    $('#test_signal').delay(600).fadeIn(600);
 
 
-    setInterval(function () {
+    var imageAddr = "http://mobilepricingdev.mohawkind.com/home/image" + "?n=" + Math.random();
+    var startTime, endTime;
+    var downloadSize = 5616998;
+    var download = new Image();
+    download.onload = function () {
+        endTime = (new Date()).getTime();
+        showResults();
+    }
+    startTime = (new Date()).getTime();
+    download.src = imageAddr;
 
-        oldState = navigator.onLine ? 'online' : 'offline';
-        if (oldState == "offline") {
-            $('#loadmsg').html('Network Connection Down.');
-        }
-        else {
+    function showResults() {
+        var duration = (endTime - startTime) / 1000; //Math.round()
+        var bitsLoaded = downloadSize * 8;
+        var speedBps = (bitsLoaded / duration).toFixed(2);
+        var speedKbps = (speedBps / 1024).toFixed(2);
+        var speedMbps = (speedKbps / 1024).toFixed(2);
+        //alert("Your connection speed is: \n" +
+        //       speedBps + " bps\n" +
+        //       speedKbps + " kbps\n" +
+        //       speedMbps + " Mbps\n");
+        $('.indicator').css('display', 'block');
+
+        $('.indicator').animate({ 'width': cper + '%' }, 600, function () { });
+        if (duration < 20) {
             $('#loadmsg').html('Network Ready.');
             var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
         }
-    }, 2250);
+        else {
+            $('#loadmsg').html('Network Connection Too Slow Or Down.');
+        }
+    }
 
-    
 
-    //getConnectionSpeed();
-    //crossDomainPost();
-   // navigator.network.isReachable("google.com", reachableCallback, {});
-  //  }
+
+
+    //setInterval(function () {
+
+    //    oldState = navigator.onLine ? 'online' : 'offline';
+    //    if (oldState == "offline") {
+    //        $('#loadmsg').html('Network Connection Down.');
+    //    }
+    //    else {
+    //        $('#loadmsg').html('Network Ready.');
+    //        var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+    //    }
+    //}, 2250);
 
 
 });
@@ -64,26 +85,6 @@ $(document).ready(function () {
 
 
 
-var checkConnection = function () {
-    try{
-        alert('checking connection');
-        var networkState = NetworkStatus.network.connection.type;
-
-        var states = {};
-        states[Connection.UNKNOWN] = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI] = 'WiFi connection';
-        states[Connection.CELL_2G] = 'Cell 2G connection';
-        states[Connection.CELL_3G] = 'Cell 3G connection';
-        states[Connection.CELL_4G] = 'Cell 4G connection';
-        states[Connection.NONE] = 'No network connection';
-
-        alert('Connection type: ' + states[networkState]);
-    }
-    catch (err) {
-        alert(err.message);
-    }
-}
 
 
 
