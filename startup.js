@@ -11,8 +11,11 @@ $(document).ready(function () {
 
     //checkConnection();
     var test = window.navigator.onLine;
-    alert(test);
-    getConnectionSpeed();
+    if (test == true) {
+
+
+        getConnectionSpeed();
+    }
 
 
 });
