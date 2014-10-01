@@ -6,16 +6,45 @@ var downloadSize = 27; //29 kb
 var minSpeed = 30; // Set minimum connection speed (percentage that is acceptable)
 var cper = 0;
 var cTxt = 'Untested';
+var oldstate = false;
+
+
+
 
 $(document).ready(function () {
 
     //checkConnection();
-    var test = window.navigator.onLine;
-    if (test == true) {
+   // var test = window.navigator.onLine;
+    //if (test == true) {
+    //oldstate = navigator.online;
+    //navigator.onlinechange = function (evnt, newState) {
+    //    alert('your changed from' + oldState + ' to' + newState + 'state');
+    //}
+
+  
+
+    $('#loadmsg').html('Testing Connection');
+   
 
 
-        getConnectionSpeed();
-    }
+    setInterval(function () {
+
+        oldState = navigator.onLine ? 'online' : 'offline';
+        if (oldState == "offline") {
+            $('#loadmsg').html('Network Connection Down.');
+        }
+        else {
+            $('#loadmsg').html('Network Ready.');
+            var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+        }
+    }, 2250);
+
+    
+
+    //getConnectionSpeed();
+    //crossDomainPost();
+   // navigator.network.isReachable("google.com", reachableCallback, {});
+  //  }
 
 
 });
@@ -34,8 +63,6 @@ $(document).ready(function () {
 //});
 
 
-
-// Functions
 
 var checkConnection = function () {
     try{
@@ -147,6 +174,32 @@ var showResults = function () {
 
 }
 
+var crossDomainPost = function() {
+    // Add the iframe with a unique name
+    var iframe = document.createElement("iframe");
+    var uniqueString = "CHANGE_THIS_TO_SOME_UNIQUE_STRING";
+    document.body.appendChild(iframe);
+    iframe.style.display = "none";
+    iframe.contentWindow.name = uniqueString;
+
+    // construct a form with hidden inputs, targeting the iframe
+    var form = document.createElement("form");
+    form.target = uniqueString;
+    form.action = "http://mobilepricingdev.mohawkind.com/Home/Image";
+    form.method = "POST";
+
+    // repeat for each parameter
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "INSERT_YOUR_PARAMETER_NAME_HERE";
+    input.value = "INSERT_YOUR_PARAMETER_VALUE_HERE";
+    form.appendChild(input);
+
+    document.body.appendChild(form);
+    var test = form.submit();
+
+    var test = null;
+}
 
 var handleImageDownload = function () {
     alert("downloaded");
@@ -158,10 +211,35 @@ var getConnectionSpeed = function () {
     try {
         //alert("getConnetionSpeed()");
        // $('#test_signal').css('display', 'none');
-       // $('#loadmsg').html('Testing Connection <span id="cspeed"></span>');
+        // $('#loadmsg').html('Testing Connection <span id="cspeed"></span>');
 
+        // Test Network Connection
+        var online = false;
+        online = navigator.onLine;
+      
+        if (online == false) {
+            $('#loadmsg').html('No network connection detected.');
+            $('#test_signal').delay(600).fadeIn(600);
+        }
+        else {
+            //startTime = (new Date()).getTime();
+           // download.src = imageAddr;
+        //}
+       // var test = window.navigator.onLine;
+       // if (test == true) {
+            setTimeout(function () {
+                try {
+                    var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+                }
+                catch (err) {
+                    alert(err.message);
+                }
+            }, 100);
+
+        }
        
-
+       
+        return;
         setTimeout(function () {
             try {
                 //var cb = function (event) {
