@@ -19,7 +19,7 @@ $(document).ready(function () {
     $('#test_signal').delay(600).fadeIn(600);
 
 
-    var imageAddr = "http://mobilepricingdev.mohawkind.com/home/image" + "?n=" + Math.random();
+    var imageAddr = "http://mobilepricingdev.mohawkind.com/home/image" + "?n=" ;
     var startTime, endTime;
     var downloadSize = 5616998;
     var download = new Image();
