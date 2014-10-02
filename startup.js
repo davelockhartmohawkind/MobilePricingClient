@@ -18,54 +18,96 @@ $(document).ready(function () {
     $('.indicator').css('display', 'block');
     $('#test_signal').delay(600).fadeIn(600);
 
+  
 
-    var imageAddr = "http://mobilepricingdev.mohawkind.com/home/image" + "?n=" ;
-    var startTime, endTime;
-    var downloadSize = 5616998;
-    var download = new Image();
-    download.onload = function () {
-        endTime = (new Date()).getTime();
-        showResults();
-    }
-    startTime = (new Date()).getTime();
-    download.src = imageAddr;
+    //do stuff
+    //var exists = urlExists('http://mobilepricingdev.mohawkind.com');
+    //do more stuff based on the boolean value of exists
+  
 
-    function showResults() {
-        var duration = (endTime - startTime) / 1000; //Math.round()
-        var bitsLoaded = downloadSize * 8;
-        var speedBps = (bitsLoaded / duration).toFixed(2);
-        var speedKbps = (speedBps / 1024).toFixed(2);
-        var speedMbps = (speedKbps / 1024).toFixed(2);
-        //alert("Your connection speed is: \n" +
-        //       speedBps + " bps\n" +
-        //       speedKbps + " kbps\n" +
-        //       speedMbps + " Mbps\n");
-        $('.indicator').css('display', 'block');
-
-        $('.indicator').animate({ 'width': cper + '%' }, 600, function () { });
-        if (duration < 20) {
-            $('#loadmsg').html('Network Ready.');
-            var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
-        }
-        else {
-            $('#loadmsg').html('Network Connection Too Slow Or Down.');
-        }
-    }
+        //do stuff
+    // function       handleExists(exists){
+    //            //do more stuff based on the boolean value of exists
+    //            if (exists) {
+    //                // request.send();
+    //                var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+    //            }
+    //            else {
+    //                alert("oh no, that doesnt exist");
+    //            }
+    //        }
 
 
+    // function urlExists(url){
+    //    $.ajax({
+    //        type: 'HEAD',
+    //        url: url,
+    //        success: function(){
+    //            handleExists(true);
+    //        },
+    //        error: function() {
+    //            handleExists(false);
+    //        }
+    //    });
+    //}
 
+    //urlExists('http://mobilepricingdev.mohawkind.com'); 
 
-    //setInterval(function () {
+    //if (urlExists('http://mobilepricingdev.mohawkind.com')) {
+    //    // request.send();
+    //    var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+    //}
+    //else {
+    //    alert("oh no, that doesnt exist");
+    //}
 
-    //    oldState = navigator.onLine ? 'online' : 'offline';
-    //    if (oldState == "offline") {
-    //        $('#loadmsg').html('Network Connection Down.');
-    //    }
-    //    else {
+    //var imageAddr = "http://mobilepricingdev.mohawkind.com/home/image" + "?n=" ;
+    //var startTime, endTime;
+    //var downloadSize = 5616998;
+    //var download = new Image();
+    //download.onload = function () {
+    //    endTime = (new Date()).getTime();
+    //    showResults();
+    //}
+    //startTime = (new Date()).getTime();
+    //download.src = imageAddr;
+
+    //function showResults() {
+    //    var duration = (endTime - startTime) / 1000; //Math.round()
+    //    var bitsLoaded = downloadSize * 8;
+    //    var speedBps = (bitsLoaded / duration).toFixed(2);
+    //    var speedKbps = (speedBps / 1024).toFixed(2);
+    //    var speedMbps = (speedKbps / 1024).toFixed(2);
+    //    //alert("Your connection speed is: \n" +
+    //    //       speedBps + " bps\n" +
+    //    //       speedKbps + " kbps\n" +
+    //    //       speedMbps + " Mbps\n");
+    //    $('.indicator').css('display', 'block');
+
+    //    $('.indicator').animate({ 'width': cper + '%' }, 600, function () { });
+    //    if (duration < 20) {
     //        $('#loadmsg').html('Network Ready.');
     //        var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
     //    }
-    //}, 2250);
+    //    else {
+    //        $('#loadmsg').html('Network Connection Too Slow Or Down.');
+    //    }
+    //}
+
+
+
+
+    setInterval(function () {
+
+        oldState = navigator.onLine ? 'online' : 'offline';
+        if (oldState == "offline") {
+            $('#loadmsg').html('Network Connection Down.');
+        }
+        else {
+            $('#loadmsg').html('Network Ready.');
+            var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+        }
+    }, 2250);
 
 
 });

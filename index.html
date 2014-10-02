@@ -32,9 +32,27 @@
     <script type="text/javascript" charset="utf-8" src="startup.js"></script>
     <script type="text/javascript">
 
-       
-        app.initialize();
-        NetworkStatus.initialize();
+        var oldState = "";
+        try{
+            if (window.navigator == undefined) {
+                alert("no navigator");
+                
+            }
+            if (typeof app !== "undefined") {
+                app.initialize();
+            }
+            //setInterval(function () {
+            //    oldState = navigator.onLine ? 'online' : 'offline';
+            //    if (oldState == "offline") {
+            //        $('#loadmsg').html('No network connection detected.');
+            //    }
+            //    else {
+            //        $('#loadmsg').html('Network Ready.');
+            //    }
+            //}, 2250);
+        } catch (err) {
+            alert('error:' + err.message);
+        }
       
      
     </script>
@@ -190,10 +208,11 @@
                 <div class="indicator_frame_start">
                     <div class="indicator" id="i_connection"></div>
                 </div>
+               <!-- <div>test <a href="javascript:getConnectionSpeed();" class="btn" id="test_signal2" >try again</a></div>-->
 
-                <div class="retry_btn">
-                    <a href="javascript:getConnectionSpeed();" class="btn_prime" name="testSignal" id="test_signal">Try Again</a>
-                </div>
+              <!--  <div >
+                    <a href="javascript:getConnectionSpeed();" class="btn_prime" id="test_signal">Try Again</a>
+                </div>  -->
 
             </div>
 
