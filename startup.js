@@ -7,7 +7,7 @@ var minSpeed = 30; // Set minimum connection speed (percentage that is acceptabl
 var cper = 0;
 var cTxt = 'Untested';
 var oldstate = false;
-
+var myInterval = null;
 
 
 
@@ -97,7 +97,7 @@ $(document).ready(function () {
 
 
 
-    setInterval(function () {
+    myInterval = setInterval(function () {
 
         oldState = navigator.onLine ? 'online' : 'offline';
         if (oldState == "offline") {
@@ -105,6 +105,7 @@ $(document).ready(function () {
         }
         else {
             $('#loadmsg').html('Network Ready.');
+            clearInterval(myInterval);
             var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
         }
     }, 2250);
