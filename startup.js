@@ -95,20 +95,26 @@ $(document).ready(function () {
     //}
 
 
-
+    var NetworkUpCounter = 0;
 
     myInterval = setInterval(function () {
 
         oldState = navigator.onLine ? 'online' : 'offline';
         if (oldState == "offline") {
+            NetworkUpCounter = 0;
             $('#loadmsg').html('Network Connection Down.');
         }
         else {
             $('#loadmsg').html('Network Ready.');
-            clearInterval(myInterval);
-            var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+            NetworkUpCounter += 1;
+            //skip the first time through to give network time to settle;
+            if (NetworkUpCounter > 1)
+            {
+                clearInterval(myInterval);
+                var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+            }
         }
-    }, 2250);
+    }, 1250);
 
 
 });
