@@ -125,7 +125,7 @@ $(document).ready(function () {
                
                 //alert("go to login");
                 clearInterval(myInterval);
-                window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev55.mohawkind.com/Home/Login',
+                window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev.mohawkind.com/Home/Login',
                                         {
                                             showLocationBar: false,
                                             showNavigationBar: false,
