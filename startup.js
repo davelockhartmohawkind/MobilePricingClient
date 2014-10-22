@@ -124,14 +124,16 @@ $(document).ready(function () {
                
                
                 //alert("go to login");
-                //clearInterval(myInterval);
-                var ref = window.open('http://mobilepricingdev55.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
-                //alert(window.location.pathname);
-                //var testme = window.location.pathname;
-                //alert(typeof(testme));
-                //if (testme.toUpperCase().indexOf("MOHAWKIND.COM") >= 0) {
-                //    alert(window.location.pathname);
-                    clearInterval(myInterval);
+                clearInterval(myInterval);
+                window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev55.mohawkind.com/Home/Login',
+                                        {
+                                            showLocationBar: false,
+                                            showNavigationBar: false,
+                                            showAddress: false
+                                        });
+               // var ref = window.open('http://mobilepricingdev55.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+                
+                 //   clearInterval(myInterval);
                     return;
                 //}
 
