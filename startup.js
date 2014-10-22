@@ -133,7 +133,7 @@ $(document).ready(function () {
                 //    alert(window.location.pathname);
                //     clearInterval(myInterval);
                     return;
-                }
+                //}
 
 
 
