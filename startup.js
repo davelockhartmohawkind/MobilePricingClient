@@ -123,15 +123,15 @@ $(document).ready(function () {
             {
                
                
-                alert("go to login");
-                //clearInterval(myInterval);
+                //alert("go to login");
+                clearInterval(myInterval);
                 var ref = window.open('http://mobilepricingdev55.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
                 //alert(window.location.pathname);
-                var testme = window.location.pathname;
+                //var testme = window.location.pathname;
                 //alert(typeof(testme));
-                if (testme.toUpperCase().indexOf("MOHAWKIND.COM") >= 0) {
-                    alert(window.location.pathname);
-                    clearInterval(myInterval);
+                //if (testme.toUpperCase().indexOf("MOHAWKIND.COM") >= 0) {
+                //    alert(window.location.pathname);
+               //     clearInterval(myInterval);
                     return;
                 }
 
