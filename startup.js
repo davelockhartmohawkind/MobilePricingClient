@@ -26,7 +26,7 @@ $(document).ready(function () {
   
 
         //do stuff
-    // function       handleExists(exists){
+    //var handleExists = function(exists){
     //            //do more stuff based on the boolean value of exists
     //            if (exists) {
     //                // request.send();
@@ -97,6 +97,17 @@ $(document).ready(function () {
 
     var NetworkUpCounter = 0;
 
+    var handleTestURL = function (content) {
+        alert(content);
+    }
+
+
+
+    //setTimeout(function () {
+    //    alert(window.location);
+    //}, 10000);
+
+
     myInterval = setInterval(function () {
 
         oldState = navigator.onLine ? 'online' : 'offline';
@@ -110,8 +121,22 @@ $(document).ready(function () {
             //skip the first time through to give network time to settle;
             if (NetworkUpCounter > 1)
             {
-                clearInterval(myInterval);
-                var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+               
+               
+                alert("go to login");
+                //clearInterval(myInterval);
+                var ref = window.open('http://mobilepricingdev55.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+                //alert(window.location.pathname);
+                var testme = window.location.pathname;
+                //alert(typeof(testme));
+                if (testme.toUpperCase().indexOf("MOHAWKIND.COM") >= 0) {
+                    alert(window.location.pathname);
+                    clearInterval(myInterval);
+                    return;
+                }
+
+
+
             }
         }
     }, 1250);
