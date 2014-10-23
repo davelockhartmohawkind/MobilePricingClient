@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.mohawkind.mobilepricingDev"
-        version   = "0.0.29" >
+        version   = "0.0.30" >
 
     <name>M P Dev</name>
 
@@ -105,8 +105,9 @@
  
   <gap:plugin name="com.phonegap.plugins.pushplugin" />
   <gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />
-  
-    <!-- Define app icon for each platform. -->
+  <gap:plugin name="org.li8.inappbrowser" version="0.1"/>
+
+  <!-- Define app icon for each platform. -->
     <icon src="Content/images/icons/Mobile-PricingDev-114x114.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />

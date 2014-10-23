@@ -125,13 +125,13 @@ $(document).ready(function () {
                
                 //alert("go to login");
                 clearInterval(myInterval);
-                window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev.mohawkind.com/Home/Login',
-                                        {
-                                            showLocationBar: false,
-                                            showNavigationBar: false,
-                                            showAddress: false
-                                        });
-               // var ref = window.open('http://mobilepricingdev55.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+                //window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev.mohawkind.com/Home/Login',
+                //                        {
+                //                            showLocationBar: false,
+                //                            showNavigationBar: false,
+                //                            showAddress: false
+                //                        });
+                var ref = window.open('http://mobilepricingdev55.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
                 
                  //   clearInterval(myInterval);
                     return;
