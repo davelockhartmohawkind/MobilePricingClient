@@ -26,32 +26,33 @@ $(document).ready(function () {
   
 
         //do stuff
-    //var handleExists = function(exists){
-    //            //do more stuff based on the boolean value of exists
-    //            if (exists) {
-    //                // request.send();
-    //                var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
-    //            }
-    //            else {
-    //                alert("oh no, that doesnt exist");
-    //            }
-    //        }
+    var handleExists = function(exists){
+                //do more stuff based on the boolean value of exists
+                if (exists) {
+                    // request.send();
+                    alert("yep");
+                   // var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+                }
+                else {
+                    alert("oh no, that doesnt exist");
+                }
+            }
 
 
-    // function urlExists(url){
-    //    $.ajax({
-    //        type: 'HEAD',
-    //        url: url,
-    //        success: function(){
-    //            handleExists(true);
-    //        },
-    //        error: function() {
-    //            handleExists(false);
-    //        }
-    //    });
-    //}
+     function urlExists(url){
+        $.ajax({
+            type: 'HEAD',
+            url: url,
+            success: function(){
+                handleExists(true);
+            },
+            error: function() {
+                handleExists(false);
+            }
+        });
+    }
 
-    //urlExists('http://mobilepricingdev.mohawkind.com'); 
+    urlExists('http://mobilepricingdev.mohawkind.com'); 
 
     //if (urlExists('http://mobilepricingdev.mohawkind.com')) {
     //    // request.send();
@@ -131,10 +132,10 @@ $(document).ready(function () {
                 //                            showNavigationBar: false,
                 //                            showAddress: false
                 //                        });
-                var ref = window.open('http://mobilepricingdev55.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
+               var ref = window.open('http://mobilepricingdev55.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
                 
                  //   clearInterval(myInterval);
-                    return;
+             //       return;
                 //}
 
 
