@@ -338,7 +338,7 @@ var getConnectionSpeed = function () {
 
        // return;
       //  alert("start download");
-       // var imageAddr = "http://mobilepricingdev.mohawkind.com/Content/images/backgrounds/login_screen_bg.jpg" + "?n=" + Math.random();
+        var imageAddr = "http://mobilepricingdev.mohawkind.com/Content/images/backgrounds/login_screen_bg.jpg" + "?n=" + Math.random();
         
      
         //var download = new Image();
@@ -347,11 +347,11 @@ var getConnectionSpeed = function () {
         //    showResults();
         //}
 
-        //$.post(
-        // 'http://mobilepricingdev.mohawkind.com/Home/Image',
-        // { imageName: "bla" },
-        // handleImageDownload
-        //         );
+        $.post(
+         'http://mobilepricingdev.mohawkind.com/Home/Image',
+         { imageName: "bla" },
+         handleImageDownload
+                 );
 
         
 
