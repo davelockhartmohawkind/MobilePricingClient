@@ -30,7 +30,8 @@ $(document).ready(function () {
                 //do more stuff based on the boolean value of exists
                 if (exists) {
                     // request.send();
-                    alert("yep");
+                   // alert("yep");
+                    window.location.href = "http://mobilepricingdev.mohawkind.com/Home/Index";
                    // var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
                 }
                 else {
