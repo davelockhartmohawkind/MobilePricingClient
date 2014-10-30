@@ -31,7 +31,7 @@ $(document).ready(function () {
                 if (exists) {
                     // request.send();
                    // alert("yep");
-                    window.location.href = "http://mobilepricingdev.mohawkind.com/Home/Index";
+                    window.location.href = "http://mobilepricingdev.mohawkind.com";
                    // var ref = window.open('http://mobilepricingdev.mohawkind.com/Home/Login', '_self', 'toolbar=no,location=no');
                 }
                 else {
