@@ -30,7 +30,7 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
     <script type="text/javascript" charset="utf-8" src="jquery.min.js"></script>
     <!--<script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>-->
-    <script type="text/javascript" charset="utf-8" src="inappbrowser"></script>
+   <!-- <script type="text/javascript" charset="utf-8" src="inappbrowser"></script>-->
     <script type="text/javascript" charset="utf-8" src="startup.js"></script>
     <script type="text/javascript">
 
@@ -43,15 +43,7 @@
             if (typeof app !== "undefined") {
                 app.initialize();
             }
-            //setInterval(function () {
-            //    oldState = navigator.onLine ? 'online' : 'offline';
-            //    if (oldState == "offline") {
-            //        $('#loadmsg').html('No network connection detected.');
-            //    }
-            //    else {
-            //        $('#loadmsg').html('Network Ready.');
-            //    }
-            //}, 2250);
+            
         } catch (err) {
             alert('error:' + err.message);
         }
@@ -63,8 +55,7 @@
 
     </head>
     <body  class="mpa_login" style="background-color: #AE0000;" >
-        
-        
+ 
         
         <script type="text/javascript">
             var pushNotification;
@@ -185,17 +176,6 @@
             }
 
 
-
-
-
-
-
-
-           
-
-
-           
-
          </script>
 
         
@@ -210,12 +190,7 @@
                 <div class="indicator_frame_start">
                     <div class="indicator" id="i_connection"></div>
                 </div>
-               <!-- <div>test <a href="javascript:getConnectionSpeed();" class="btn" id="test_signal2" >try again</a></div>-->
-
-              <!--  <div >
-                    <a href="javascript:getConnectionSpeed();" class="btn_prime" id="test_signal">Try Again</a>
-                </div>  -->
-
+             
             </div>
 
 
@@ -225,8 +200,6 @@
         <div class="companybox">
             <img src="Content/images/logos/mohawk_company_logo.png" class="company_logo" />
         </div>
-
-
 
 
 </body>
