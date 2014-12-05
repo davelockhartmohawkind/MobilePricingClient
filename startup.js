@@ -23,14 +23,14 @@ $(document).ready(function () {
         if (exists) {
 
             setTimeout(clearInterval(myInterval),1000);
-            window.location.href = "http://mobilepricingdev.mohawkind.com";
-            // var ref = window.open('http://mobilepricingdev.mohawkind.com', '_self', 'toolbar=no,location=no');
-            //window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev.mohawkind.com/Home/Login',
-            //                        {
-            //                            showLocationBar: false,
-            //                            showNavigationBar: false,
-            //                            showAddress: false
-            //                        });
+            //window.location.href = "http://mobilepricingdev.mohawkind.com";
+            //// var ref = window.open('http://mobilepricingdev.mohawkind.com', '_self', 'toolbar=no,location=no');
+            window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev.mohawkind.com/Home/Login',
+                                    {
+                                        showLocationBar: false,
+                                        showNavigationBar: false,
+                                        showAddress: false
+                                    });
            
         }
         else {
