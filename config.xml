@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.mohawkind.mobilepricingDev"
-        version   = "0.0.40" >
+        version   = "0.0.41" >
 
     <name>M P Dev</name>
 
@@ -28,7 +28,7 @@
       <plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager"/>
 
       <!--<plugin name="splash" value="org.apache.cordova.splashscreen" />-->
-      <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+      <!--<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />-->
    <!--   <plugin name="App" value="org.apache.cordova.App"/>
       
       <plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/>
@@ -104,7 +104,7 @@
     -->
  
   <gap:plugin name="com.phonegap.plugins.pushplugin" />
-  <!--<gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />-->
+  <gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />
   <gap:plugin name="org.apache.cordova.inappbrowser" version="0.1"/>
   
 
