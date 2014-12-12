@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.mohawkind.mobilepricingDev"
-        version   = "0.0.42" >
+        version   = "0.0.43" >
 
     <name>M P Dev</name>
 
@@ -106,7 +106,7 @@
   <gap:plugin name="com.phonegap.plugins.pushplugin" />
   <gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />
   <gap:plugin name="org.apache.cordova.inappbrowser" version="0.1"/>
-  
+  <gap:plugin name="de.appplant.cordova.plugin.email-composer" />
 
   <!-- Define app icon for each platform. -->
     <icon src="Content/images/icons/Mobile-PricingDev-114x114.png" />
