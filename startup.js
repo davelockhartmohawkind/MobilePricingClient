@@ -18,6 +18,14 @@ $(document).ready(function () {
     $('.indicator').css('display', 'block');
     $('#test_signal').delay(600).fadeIn(600);
 
+    window.plugin.email.open({
+        to: ['max.mustermann@appplant.de'],
+        cc: ['erika.mustermann@appplant.de'],
+        bcc: ['john.doe@appplant.com', 'jane.doe@appplant.com'],
+        subject: 'Greetings',
+        body: 'How are you? Nice greetings from Leipzig'
+    });
+
     var handleExists = function (exists) {
         //do more stuff based on the boolean value of exists
         if (exists) {
