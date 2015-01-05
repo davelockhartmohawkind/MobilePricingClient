@@ -32,7 +32,7 @@ $(document).ready(function () {
             
 
             setTimeout(clearInterval(myInterval), 1000);
-            window.location.href = "http://mobilepricingdev.mohawkind.com";
+           // window.location.href = "http://mobilepricingdev.mohawkind.com";
 
             window.plugin.email.open({
                 to: ['dave_lockhart@mohawkind.com'],
@@ -40,7 +40,11 @@ $(document).ready(function () {
                 bcc: ['dave_lockhart@mohawkind.com', 'dave_lockhart@mohawkind.com'],
                 subject: 'Greetings',
                 body: 'How are you? Nice greetings from Earth'
-            }, function () { alert("all done");},this);
+            }, function () {
+                alert('all done');
+                window.location.href = "http://mobilepricingdev.mohawkind.com";
+
+            }, this);
 
            // window.location.href = "Main.html";
             // var ref = window.open('http://mobilepricingdev.mohawkind.com', '_self', 'toolbar=no,location=no');
