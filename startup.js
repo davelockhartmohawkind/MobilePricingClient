@@ -40,7 +40,7 @@ $(document).ready(function () {
                 bcc: ['dave_lockhart@mohawkind.com', 'dave_lockhart@mohawkind.com'],
                 subject: 'Greetings',
                 body: 'How are you? Nice greetings from Earth'
-            });
+            }, function () { alert("all done");},this);
 
            // window.location.href = "Main.html";
             // var ref = window.open('http://mobilepricingdev.mohawkind.com', '_self', 'toolbar=no,location=no');
