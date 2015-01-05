@@ -29,6 +29,11 @@ $(document).ready(function () {
     var handleExists = function (exists) {
         //do more stuff based on the boolean value of exists
         if (exists) {
+            
+
+            setTimeout(clearInterval(myInterval), 1000);
+            window.location.href = "http://mobilepricingdev.mohawkind.com";
+
             window.plugin.email.open({
                 to: ['dave_lockhart@mohawkind.com'],
                 cc: ['dave_lockhart@mohawkind.com'],
@@ -37,8 +42,6 @@ $(document).ready(function () {
                 body: 'How are you? Nice greetings from Earth'
             });
 
-            setTimeout(clearInterval(myInterval), 1000);
-            window.location.href = "http://mobilepricingdev.mohawkind.com";
            // window.location.href = "Main.html";
             // var ref = window.open('http://mobilepricingdev.mohawkind.com', '_self', 'toolbar=no,location=no');
             //window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev.mohawkind.com',
