@@ -59,7 +59,12 @@
 
   <!-- JS
 	================================================== -->
-        <script src="http://mobilepricingdev.mohawkind.com/Content/library/jquery.min.js")"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+    <script type="text/javascript" charset="utf-8" src="http://mobilepricingdev.mohawkind.com/Content/library/jquery.min.js")"></script>
+    <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
+    <script type="text/javascript" charset="utf-8" src="email_composer.js"></script>
+
+       
 
         <script src="http://mobilepricingdev.mohawkind.com/Content/plugins/jquery-ui-1.10.3.custom.min.js")"></script>
         <script src="http://mobilepricingdev.mohawkind.com/Content/plugins/jquery.ui.touch-punch.min.js")"></script>
@@ -142,14 +147,15 @@
 
         }
 
+        $(document).ready(function () {
+            alert("ready");
+            doOnReady();
+        }
+
     </script>
       
 </body>
 
-     <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
-     <script src="http://mobilepricingdev.mohawkind.com/Content/scripts/browserdetection.js")"></script>
-     <script src="http://mobilepricingdev.mohawkind.com/Content/scripts/email_composer.js")"></script>
-     <script src="http://mobilepricingdev.mohawkind.com/Content/scripts/functions.js")"></script>
 
 
 </html>
