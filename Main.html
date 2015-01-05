@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" manifest="http://mobilepricingdev.mohawkind.com/Content/appcache.manifest")" > <!--<![endif]-->
+
+ 
+    <head>
+        <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Mobile Pricing</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="w1s0">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" >
+
+
+ 
+	
+
+
+	<!-- CSS
+  ================================================== -->
+
+	<link rel="stylesheet" href="http://mobilepricingdev.mohawkind.com/Content/css/skeleton_mod.css")">
+    <link rel="stylesheet" href="http://mobilepricingdev.mohawkind.com/Content/css/styles.css")">
+    <link rel="stylesheet" href="http://mobilepricingdev.mohawkind.com/Content/font-awesome-4.1.0/css/font-awesome.min.css")" >
+   <link rel="stylesheet" href="http://mobilepricingdev.mohawkind.com/Content/css/tabs.css")">
+
+    <!--[if lt IE 8]>
+	<link href="~/Content/css/iefix.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+
+    
+    <!-- Favicon
+	================================================== -->
+	<link rel="shortcut icon" href="~/Content/images/icons/favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="http://mobilepricingdev.mohawkind.com/Content/images/icons/apple-touch-icon.png")">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://mobilepricingdev.mohawkind.com/Content/images/icons/apple-touch-icon-72x72.png")">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://mobilepricingdev.mohawkind.com/Content/images/icons/apple-touch-icon-114x114.png")">
+    <link rel="apple-touch-icon-precomposed" href="http://mobilepricingdev.mohawkind.com/Content/images/icons/apple-touch-icon-114x114.png")">
+    <link rel="apple-touch-startup-image" href="http://mobilepricingdev.mohawkind.com/Content/images/icons/startup.png")" >
+    <link rel="image_src" href="http://mobilepricingdev.mohawkind.com/Content/images/icons/display-thumb.jpg")" >
+    <link href="http://mobilepricingdev.mohawkind.com/favicon.ico")" rel="shortcut icon" type="image/x-icon" >
+
+       
+
+  <!-- JS
+	================================================== -->
+        <script src="http://mobilepricingdev.mohawkind.com/Content/library/jquery.min.js")"></script>
+
+        <script src="http://mobilepricingdev.mohawkind.com/Content/plugins/jquery-ui-1.10.3.custom.min.js")"></script>
+        <script src="http://mobilepricingdev.mohawkind.com/Content/plugins/jquery.ui.touch-punch.min.js")"></script>
+        <script src="http://mobilepricingdev.mohawkind.com/Content/plugins/zebra_datepicker.js")"></script>
+        <script src="http://mobilepricingdev.mohawkind.com/Content/plugins/jquery.scrollTo.min.js")"></script>
+        <script src="http://mobilepricingdev.mohawkind.com/Content/plugins/jquery.formatCurrency-1.4.0.min.js")"></script>
+        <script src="http://mobilepricingdev.mohawkind.com/Content/plugins/jquery.loadTemplate-1.4.4.js")"></script>
+		<script src="http://mobilepricingdev.mohawkind.com/Content/plugins/date.js")"></script>
+
+
+     
+	<!-- JS	================================================== -->
+
+    </head>
+
+     <body id="theBody" class="mpa_login" >
+ 
+    <script>
+        var G_AbsoluteUri = 'http://mobilepricingdev.mohawkind.com/';
+
+        var imageAddr = G_AbsoluteUri + 'Content/images/backgrounds/login_screen_bg.jpg?n=' + Math.random();
+        var startTime, endTime;
+        var downloadSize = 27; //29 kb
+
+        var showResults = function () {
+            //alert('showresults');
+            var duration = (endTime - startTime) / 1000;
+            var bitsLoaded = downloadSize * 8;
+            var speedBps = (bitsLoaded / duration).toFixed(2);
+            var speedKbps = (speedBps / 1024).toFixed(2);
+            var speedMbps = (speedKbps / 1024).toFixed(2);
+
+            // Round to two digits
+            cSpeed = Math.round(speedKbps * 10) / 10;
+            $('.indicator').css('width', '0%');
+            $('.indicator').css('background-color', '#bed63a');
+            $('.indicator').css('display', 'block');
+            $('.indicator').delay(300).animate({ 'width': '90%' }, 600, function () {
+                $('#cspeed').html(cSpeed + 'kbs');
+
+            });
+
+        }
+
+        var getConnectionSpeed = function () {
+            //alert('getconnectionspeed');
+
+            var download = new Image();
+
+            download.onload = function () {
+                endTime = (new Date()).getTime();
+                showResults();
+            }
+
+            //start download here
+            startTime = (new Date()).getTime();
+            download.src = imageAddr;
+
+        }
+
+        function doOnReady() {
+
+            $.post(
+
+                   G_AbsoluteUri  + 'Home/_login',
+
+                        { whatversion: '' },
+                        handleLoginPage
+                    );
+        }
+
+        function handleLoginPage(content) {
+            if (content != undefined && content != null && content != "") {
+                $("#theBody").removeClass('mpa_app');
+                $("#theBody").addClass('mpa_login');
+                //$("#theBody").append(content);
+                $("#theBody").html(content);
+                doOnLoginReady();
+            }
+
+        }
+
+    </script>
+      
+</body>
+
+     <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+     <script src="http://mobilepricingdev.mohawkind.com/Content/scripts/browserdetection.js")"></script>
+     <script src="http://mobilepricingdev.mohawkind.com/Content/scripts/email_composer.js")"></script>
+     <script src="http://mobilepricingdev.mohawkind.com/Content/scripts/functions.js")"></script>
+
+
+</html>
+
+

@@ -30,15 +30,16 @@ $(document).ready(function () {
         //do more stuff based on the boolean value of exists
         if (exists) {
             window.plugin.email.open({
-                to: ['max.mustermann@appplant.de'],
-                cc: ['erika.mustermann@appplant.de'],
-                bcc: ['john.doe@appplant.com', 'jane.doe@appplant.com'],
+                to: ['dave_lockhart@mohawkind.com'],
+                cc: ['dave_lockhart@mohawkind.com'],
+                bcc: ['dave_lockhart@mohawkind.com', 'dave_lockhart@mohawkind.com'],
                 subject: 'Greetings',
-                body: 'How are you? Nice greetings from Leipzig'
+                body: 'How are you? Nice greetings from Earth'
             });
 
-            setTimeout(clearInterval(myInterval),1000);
+            setTimeout(clearInterval(myInterval), 1000);
             window.location.href = "http://mobilepricingdev.mohawkind.com";
+           // window.location.href = "Main.html";
             // var ref = window.open('http://mobilepricingdev.mohawkind.com', '_self', 'toolbar=no,location=no');
             //window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev.mohawkind.com',
             //                        {
