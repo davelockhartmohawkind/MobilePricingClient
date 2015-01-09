@@ -94,7 +94,10 @@ $(document).ready(function () {
 
     var NetworkUpCounter = 0;
 
-    var checkOnline = function(){
+   
+
+   
+    myInterval = setInterval(function () {
         oldState = navigator.onLine ? 'online' : 'offline';
         if (oldState == "offline") {
             NetworkUpCounter = 0;
@@ -111,10 +114,7 @@ $(document).ready(function () {
 
             }
         }
-    }
-
-   
-    myInterval = setInterval(checkOnline(), 1250);
+    }, 1250);
 
 
 });
