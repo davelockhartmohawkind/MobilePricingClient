@@ -84,6 +84,8 @@
 mpa
     <script>
         var G_AbsoluteUri = 'http://mobilepricingdev.mohawkind.com/';
+        var G_Home = 'Main.html';
+        var G_appVersion = "";
 
         var imageAddr = G_AbsoluteUri + 'Content/images/backgrounds/login_screen_bg.jpg?n=' + Math.random();
         var startTime, endTime;
@@ -125,7 +127,7 @@ mpa
 
         }
 
-        function doOnReady() {
+        var doOnReady = function() {
 
             $.post(
 
@@ -136,7 +138,7 @@ mpa
                     );
         }
 
-        function handleLoginPage(content) {
+        var handleLoginPage = function(content) {
             if (content != undefined && content != null && content != "") {
                 $("#theBody").removeClass('mpa_app');
                 $("#theBody").addClass('mpa_login');
