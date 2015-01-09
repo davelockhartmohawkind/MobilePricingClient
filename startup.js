@@ -48,7 +48,7 @@ $(document).ready(function () {
 
             //}, this);
             try{
-                clearInterval(myInterval);
+                setTimeout(clearInterval(myInterval), 500);
                 window.location.href = "Main.html";
             }
             catch (err)
