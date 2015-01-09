@@ -8,6 +8,7 @@ var cper = 0;
 var cTxt = 'Untested';
 var oldstate = false;
 var myInterval = null;
+var checkingURL = false;
 
 
 
@@ -27,6 +28,7 @@ $(document).ready(function () {
     //});
 
     var handleExists = function (exists) {
+        checkingURL = false;
         //do more stuff based on the boolean value of exists
         if (exists) {
             
@@ -70,41 +72,49 @@ $(document).ready(function () {
 
 
     function urlExists(url) {
-        $.ajax({
-            type: 'HEAD',
-            url: url,
-            success: function () {
-                handleExists(true);
-            },
-            error: function () {
-                handleExists(false);
-            }
-        });
+        if (checkingURL == false) {
+            checkingURL = true;
+            $.ajax({
+                type: 'HEAD',
+                url: url,
+                success: function () {
+                    handleExists(true);
+                },
+                error: function () {
+                    handleExists(false);
+                }
+            });
+        }
+        else
+        {
+            //skip it this time
+        }
     }
 
 
     var NetworkUpCounter = 0;
 
-   
-    myInterval = setInterval(function () {
-
+    var checkOnline = function(){
         oldState = navigator.onLine ? 'online' : 'offline';
         if (oldState == "offline") {
             NetworkUpCounter = 0;
             $('#loadmsg').html('Network Connection Down.');
         }
         else {
-           
+
             NetworkUpCounter += 1;
             //skip the first time through to give network time to settle;
             if (NetworkUpCounter > 1) {
                 $('#loadmsg').html('Network Ready.');
-               // clearInterval(myInterval);
+                // clearInterval(myInterval);
                 urlExists('http://mobilepricingdev.mohawkind.com');
-               
+
             }
         }
-    }, 1250);
+    }
+
+   
+    myInterval = setInterval(checkOnline(), 1250);
 
 
 });
