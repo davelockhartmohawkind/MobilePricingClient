@@ -31,7 +31,7 @@ $(document).ready(function () {
         if (exists) {
             
 
-            setTimeout(clearInterval(myInterval), 1000);
+           // setTimeout(clearInterval(myInterval), 1000);
            // window.location.href = "http://mobilepricingdev.mohawkind.com";
 
             //window.plugin.email.open({
@@ -45,8 +45,14 @@ $(document).ready(function () {
             //    window.location.href = "http://mobilepricingdev.mohawkind.com";
 
             //}, this);
+            try{
+                clearInterval(myInterval);
+                window.location.href = "Main.html";
+            }
+            catch (err)
+            {
 
-            window.location.href = "Main.html";
+            }
             // var ref = window.open('http://mobilepricingdev.mohawkind.com', '_self', 'toolbar=no,location=no');
             //window.plugins.ChildBrowser.showWebPage('http://mobilepricingdev.mohawkind.com',
             //                        {
