@@ -206,23 +206,14 @@
 		background-color: #f1f0ed;
 
 		/* IE10 */
-		background-image: -ms-linear-gradient(top, #f1f0ed 20%, #e7e7e7 100%);
 		/* Mozilla Firefox */
-		background-image: -moz-linear-gradient(top, #f1f0ed 20%, #e7e7e7 100%);
 		/* Opera */
-		background-image: -o-linear-gradient(top, #f1f0ed 20%, #e7e7e7 100%);
 		/* Webkit (Safari/Chrome 10) */
-		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f1f0ed), color-stop(1, #e7e7e7));
 		/* Webkit (Chrome 11+) */
-		background-image: -webkit-linear-gradient(top, #f1f0ed 20%, #e7e7e7 100%);
 		/* W3C Markup */
-		background-image: linear-gradient(to bottom, #f1f0ed 20%, #e7e7e7 100%);
-
-		filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f0ed', EndColorStr='#e7e7e7'); /* IE6,IE7 */
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f0ed', EndColorStr='#e7e7e7')"; /* IE8 */
-
-    background-position:fixed;
-  }
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f0ed', EndColorStr='#e7e7e7')";
+    background-image: linear-gradient(to bottom, #f1f0ed 20%, #e7e7e7 100%);/* IE6,IE7 */
+}
 
 /* TEST .viewport_wrapper {
     width:100%;

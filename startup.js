@@ -31,22 +31,7 @@ $(document).ready(function () {
         checkingURL = false;
         //do more stuff based on the boolean value of exists
         if (exists) {
-            
 
-           // setTimeout(clearInterval(myInterval), 1000);
-           // window.location.href = "http://mobilepricingdev.mohawkind.com";
-
-            //window.plugin.email.open({
-            //    to: ['dave_lockhart@mohawkind.com'],
-            //    cc: ['dave_lockhart@mohawkind.com'],
-            //    bcc: ['dave_lockhart@mohawkind.com', 'dave_lockhart@mohawkind.com'],
-            //    subject: 'Greetings',
-            //    body: 'How are you? Nice greetings from Earth'
-            //}, function () {
-            //    alert('all done');
-            //    window.location.href = "http://mobilepricingdev.mohawkind.com";
-
-            //}, this);
             try{
                 setTimeout(clearInterval(myInterval), 500);
                 window.location.href = "Main.html";
@@ -64,9 +49,11 @@ $(document).ready(function () {
             //                        });
            
         }
-        else {
+        else
+        {
 
             $('#loadmsg').html('Internet Destination Is Not Available.');
+            $("#try_again").css('display', 'block');
         }
     }
 
@@ -91,12 +78,11 @@ $(document).ready(function () {
         }
     }
 
+    
+    $('#try_again').css('display', 'none');
 
     var NetworkUpCounter = 0;
 
-   
-
-   
     myInterval = setInterval(function () {
         oldState = navigator.onLine ? 'online' : 'offline';
         if (oldState == "offline") {
@@ -115,7 +101,6 @@ $(document).ready(function () {
             }
         }
     }, 1250);
-
 
 });
 // Document.ready: END
