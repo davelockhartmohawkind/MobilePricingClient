@@ -51,7 +51,7 @@ $(document).ready(function () {
         }
         else
         {
-
+            setTimeout(clearInterval(myInterval), 500);
             $('#loadmsg').html('Internet Destination Is Not Available.');
             $("#try_again").css('display', 'block');
         }
