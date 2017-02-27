@@ -1,0 +1,119 @@
+﻿/* #Tabs
+================================================== */
+
+	#tabbar1, #tabbar2 {
+		margin:auto;
+		width:auto;
+		height:13px;
+		text-align:center;
+		z-index:1400;
+	}
+	
+	#tabbar1 {
+		margin-top:-8px;
+	}
+	
+	#tabbar2 {
+		margin-top:-8px;
+	}
+	
+	ul.tabs, ul.tabs2 {
+		display:block;
+		width:150px; /*Set width to center because li must float left */
+		margin:auto;
+		padding:0;
+		border:none;
+		background:none;
+		}
+		
+	.tadjust1 { width:150px !important; }
+		
+	ul.tabs li, ul.tabs2 li {
+		display:block;
+		width:auto;
+		padding:0px;
+		margin:0px;
+	  	width:50% !important;
+		float:left;
+		}
+		
+	ul.tabs li a, ul.tabs2 li a {
+	  background: #FFF;
+	  border: 1px solid #d2d2d3;
+	  margin:0px !important;
+	  width:100%;
+	  color: #888;
+	  display: inline-block;
+	  font-size: 15px;
+	  font-weight: normal;
+	  text-decoration: none;
+	  cursor: pointer;
+	  line-height: 30px;
+	  font-family: 'proxima_nova_rgregular', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+	ul.tabs li a.active, ul.tabs2 li a.active {
+		margin:0px !important;
+		background: #db0000;
+		border: 1px solid #db0000;
+		color:#FFF;
+		
+		}
+	ul.tabs li:first-child a.active, ul.tabs2 li:first-child a.active {
+		margin-left: 0px; }
+	ul.tabs li:first-child a, ul.tabs2 li:first-child a {
+		 }
+	ul.tabs li:last-child a, ul.tabs2 li:last-child a {
+		
+		 }
+
+	ul.tabs-content { margin: 0; display: block; }
+	ul.tabs-content > li { display:none; }
+	ul.tabs-content > li.active { display: block; }
+	
+	ul.tabs li a.right_round, ul.tabs2 li a.right_round {
+		-moz-border-radius-topright:10px;
+		-webkit-border-top-right-radius:10px;
+		border-top-right-radius:10px;
+		-moz-border-radius-bottomright:10px;
+		-webkit-border-bottom-right-radius:10px;
+		border-bottom-right-radius:10px;	
+	}
+	
+	ul.tabs li a.left_round, ul.tabs2 li a.left_round {
+		-moz-border-radius-topleft:10px;
+		-webkit-border-top-left-radius:10px;
+		border-top-left-radius:10px;
+		-moz-border-radius-bottomleft:10px;
+		-webkit-border-bottom-left-radius:10px;
+		border-bottom-left-radius:10px;	
+	}
+	
+	
+
+	/* Clearfixing tabs for beautiful stacking */
+	ul.tabs:before,
+	ul.tabs:after {
+	  content: '\0020';
+	  display: block;
+	  overflow: hidden;
+	  visibility: hidden;
+	  width: 0;
+	  height: 0; }
+	ul.tabs:after {
+	  clear: both; }
+	ul.tabs {
+	  zoom: 1; }
+	  
+	ul.tabs2:before,
+	ul.tabs2:after {
+	  content: '\0020';
+	  display: block;
+	  overflow: hidden;
+	  visibility: hidden;
+	  width: 0;
+	  height: 0; }
+	ul.tabs2:after {
+	  clear: both; }
+	ul.tabs2 {
+	  zoom: 1; }
+	  
