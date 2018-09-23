@@ -1,72 +1,60 @@
 ﻿<!DOCTYPE HTML>
 <html  manifest="appcache.manifest">
     <head>
+		<title>com.Mohawkind.mobilepricing</title>
+		<!-- =================== CSS =============================== -->
+		<link rel="stylesheet" href="Content/css/skeleton_mod.css">
+		<link rel="stylesheet" href="Content/css/styles.css">
+			
+		<!-- ======================= Mobile Specific Metasf =========================== -->
 
-        <title>com.Mohawkind.mobilepricing</title>
-  <!-- CSS
-  ================================================== -->
-  <
-	<link rel="stylesheet" href="Content/css/skeleton_mod.css">
-    <link rel="stylesheet" href="Content/css/styles.css">
+		<!-- ====================== Favicon ============================ -->
+		<link rel="shortcut icon" href="Content/images/icons/favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="Content/images/icons/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="Content/images/icons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="Content/images/icons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon-precomposed" href="Content/images/icons/apple-touch-icon-114x114.png"/>
+
+		<link rel="apple-touch-startup-image" href="assets/images/icons/startup.png" />
+		<link rel="image_src" href="assets/images/icons/display-thumb.jpg" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" >
+		<!-- Turn off telephone number detection. -->
+		<meta name="format-detection" content="telephone=no">
 		
-        <!-- Mobile Specific Metasf
-  ================================================== -->
+		<!-- ===================== Javacript ============================= -->
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+		<script type="text/javascript" charset="utf-8" src="jquery.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
+		<script type="text/javascript" charset="utf-8" src="email_composer.js"></script>
+		<!-- <script type="text/javascript" charset="utf-8" src="inappbrowser"></script>-->
+		<script type="text/javascript" charset="utf-8" src="startup.js"></script>
+			
+		<script type="text/javascript">
 
-         <!-- Favicon
-	================================================== -->
-	<link rel="shortcut icon" href="Content/images/icons/favicon.ico">
-	<link rel="apple-touch-icon" sizes="57x57" href="Content/images/icons/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="Content/images/icons/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="Content/images/icons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon-precomposed" href="Content/images/icons/apple-touch-icon-114x114.png"/>
+			var oldState = "";
+			try{
+				if (window.navigator == undefined) {
+					alert("no navigator");
+					
+				}
+			   
 
-    <link rel="apple-touch-startup-image" href="assets/images/icons/startup.png" />
-    <link rel="image_src" href="assets/images/icons/display-thumb.jpg" />
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" >
-<!-- Turn off telephone number detection. -->
-    <meta name="format-detection" content="telephone=no">
-    
-          <!-- Javacript
-	================================================== -->
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
-    <script type="text/javascript" charset="utf-8" src="jquery.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
-    <script type="text/javascript" charset="utf-8" src="email_composer.js"></script>
-   <!-- <script type="text/javascript" charset="utf-8" src="inappbrowser"></script>-->
-    <script type="text/javascript" charset="utf-8" src="startup.js"></script>
-		
-    <script type="text/javascript">
-
-        var oldState = "";
-        try{
-            if (window.navigator == undefined) {
-                alert("no navigator");
-                
-            }
-           
-
-            if (typeof app !== "undefined") {
-                app.initialize();
-            }
-            
-        } catch (err) {
-            alert('error:' + err.message);
-        }
-      
-     
-    </script>
-    <!--<script type="text/javascript" src="PushNotification.js"></script>-->
-
-	
-
+				if (typeof app !== "undefined") {
+					app.initialize();
+				}
+				
+			} catch (err) {
+				alert('error:' + err.message);
+			}
+		</script>
+		<!--<script type="text/javascript" src="PushNotification.js"></script>-->
     </head>
     <body  class="mpa_login" style="background-color: #AE0000;" >
- 
-        
         <script type="text/javascript">
+		
             var pushNotification;
 
             // handle APNS notifications for iOS
@@ -183,43 +171,27 @@
             function onFail(message) {
                 alert('Failed because: ' + message);
             }
-
-
-         </script>
-
-        
-       
-
+        </script>
+		
         <div class="logobox">
             <img src="Content/images/logos/mpower_logo_start.png" class="logo_start" />
             <h1>Mobile Pricing Application</h1>
-
             <div id="startloadbox">
                 <h5 id="loadmsg">Testing Connection <span id="cspeed"></span></h5>
                 <div class="indicator_frame_start">
                     <div class="indicator" id="i_connection"></div>
-                </div>
-             
+                </div>             
             </div>
-
-            
         </div>
-         <div class="cntrl_shim"></div>
-          <div style=" display:block;
-  width:100%;
-  height:auto;
-  position:absolute;
-  bottom:36%;
-  left:0;
-  text-align:center; " >
-                    <a href="javascript:window.location.href='index.html';" style="display:block" class="btn_menu"  id="try_again">Try Again</a>
-          </div>
-         <div class="cntrl_shim"></div>
+		
+        <div class="cntrl_shim"></div>
+		<div style=" display:block; width:100%; height:auto; position:absolute;  bottom:36%;  left:0;  text-align:center; " >
+			<a href="javascript:window.location.href='index.html';" style="display:block" class="btn_menu"  id="try_again">Try Again</a>
+		</div>
+		
+        <div class="cntrl_shim"></div>
         <div class="companybox">
             <img src="http://mobilepricingdev.mohawkind.com/Content/images/logos/new_logo.png"  />
         </div>
-
-
-</body>
-  
+	</body>
 </html>

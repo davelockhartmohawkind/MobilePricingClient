@@ -13,8 +13,7 @@ var checkingURL = false;
 
 
 $(document).ready(function () {
-
-
+	
     $('#loadmsg').html('Testing Connection');
     $('.indicator').css('display', 'block');
     $('#test_signal').delay(600).fadeIn(600);
@@ -77,7 +76,6 @@ $(document).ready(function () {
             //skip it this time
         }
     }
-
     
     $('#try_again').css('display', 'none');
 
@@ -101,6 +99,5 @@ $(document).ready(function () {
             }
         }
     }, 1250);
-
 });
 // Document.ready: END
